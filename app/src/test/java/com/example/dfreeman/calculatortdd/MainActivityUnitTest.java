@@ -120,13 +120,13 @@ public class MainActivityUnitTest {
         buttonSeven.callOnClick();
         assertEquals("34567", mainActivity.getFirstFieldText());
         buttonPlus.callOnClick();
-        assertEquals("+", mainActivity.getOperateorText());
+        assertEquals("+", mainActivity.getOperatorText());
         buttonMinus.callOnClick();
-        assertEquals("-", mainActivity.getOperateorText());
+        assertEquals("-", mainActivity.getOperatorText());
         buttonMult.callOnClick();
-        assertEquals("*", mainActivity.getOperateorText());
+        assertEquals("*", mainActivity.getOperatorText());
         buttonDiv.callOnClick();
-        assertEquals("/", mainActivity.getOperateorText());
+        assertEquals("/", mainActivity.getOperatorText());
         buttonEight.callOnClick();
         assertEquals("8", mainActivity.getSecondFieldText());
         buttonNine.callOnClick();

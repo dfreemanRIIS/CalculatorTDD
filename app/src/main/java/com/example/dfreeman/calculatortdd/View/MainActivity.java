@@ -10,7 +10,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String firstFieldText;
     private String secondFieldText;
-    private String operateorText;
+    private String operatorText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         return "Test";
     }
 
-    public String getOperateorText() {
+    public String getOperatorText() {
         return "Test";
     }
 }
