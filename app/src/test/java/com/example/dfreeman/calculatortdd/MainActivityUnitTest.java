@@ -28,27 +28,42 @@ public class MainActivityUnitTest {
     private Button buttonEight;
     private Button buttonNine;
     private Button buttonZero;
-
+    private Button buttonPlus;
+    private Button buttonMinus;
+    private Button buttonMult;
+    private Button buttonDiv;
+    private Button buttonClear;
+    private Button buttonEquals;
+    private Button buttonChangeColor;
 
     @Before
     public void setUp() {
         mainActivity = Robolectric.buildActivity(MainActivity.class).create().get();
         assertNotNull("Main Activity not setup", mainActivity);
-        buttonOne = (Button)mainActivity.findViewById(R.id.one);
-        buttonTwo = (Button)mainActivity.findViewById(R.id.two);
-        buttonThree = (Button)mainActivity.findViewById(R.id.three);
-        buttonFour = (Button)mainActivity.findViewById(R.id.four);
-        buttonFive = (Button)mainActivity.findViewById(R.id.five);
-        buttonSix = (Button)mainActivity.findViewById(R.id.six);
-        buttonSeven = (Button)mainActivity.findViewById(R.id.seven);
-        buttonEight = (Button)mainActivity.findViewById(R.id.eight);
-        buttonNine = (Button)mainActivity.findViewById(R.id.nine);
-        buttonZero = (Button)mainActivity.findViewById(R.id.zero);
+        buttonOne = (Button) mainActivity.findViewById(R.id.one);
+        buttonTwo = (Button) mainActivity.findViewById(R.id.two);
+        buttonThree = (Button) mainActivity.findViewById(R.id.three);
+        buttonFour = (Button) mainActivity.findViewById(R.id.four);
+        buttonFive = (Button) mainActivity.findViewById(R.id.five);
+        buttonSix = (Button) mainActivity.findViewById(R.id.six);
+        buttonSeven = (Button) mainActivity.findViewById(R.id.seven);
+        buttonEight = (Button) mainActivity.findViewById(R.id.eight);
+        buttonNine = (Button) mainActivity.findViewById(R.id.nine);
+        buttonZero = (Button) mainActivity.findViewById(R.id.zero);
+        buttonPlus = (Button) mainActivity.findViewById(R.id.plus);
+        buttonMinus = (Button) mainActivity.findViewById(R.id.minus);
+        buttonMult = (Button) mainActivity.findViewById(R.id.multiply);
+        buttonDiv = (Button) mainActivity.findViewById(R.id.divide);
+        buttonClear = (Button) mainActivity.findViewById(R.id.clear);
+        buttonEquals = (Button) mainActivity.findViewById(R.id.equals);
+        buttonChangeColor = (Button) mainActivity.findViewById(R.id.changeColor);
     }
 
     @Test
     public void testNumberButtons() {
-        buttonOne.callOnClick();
+        //buttonOne.callOnClick();
+        //This will be for testing clicks later
+
         String numberOne = (String) buttonOne.getText();
         String numberTwo = (String) buttonTwo.getText();
         String numberThree = (String) buttonThree.getText();
@@ -59,16 +74,33 @@ public class MainActivityUnitTest {
         String numberEight = (String) buttonEight.getText();
         String numberNine = (String) buttonNine.getText();
         String numberZero = (String) buttonZero.getText();
-        assertEquals("1" ,numberOne);
-        assertEquals("2" ,numberTwo);
-        assertEquals("3" ,numberThree);
-        assertEquals("4" ,numberFour);
-        assertEquals("5" ,numberFive);
-        assertEquals("6" ,numberSix);
-        assertEquals("7" ,numberSeven);
-        assertEquals("8" ,numberEight);
-        assertEquals("9" ,numberNine);
-        assertEquals("0" ,numberZero);
+        assertEquals("1", numberOne);
+        assertEquals("2", numberTwo);
+        assertEquals("3", numberThree);
+        assertEquals("4", numberFour);
+        assertEquals("5", numberFive);
+        assertEquals("6", numberSix);
+        assertEquals("7", numberSeven);
+        assertEquals("8", numberEight);
+        assertEquals("9", numberNine);
+        assertEquals("0", numberZero);
+    }
 
+    @Test
+    public void testOtherButtons() {
+        String numberPlus = (String) buttonPlus.getText();
+        String numberMinus = (String) buttonMinus.getText();
+        String numberMult = (String) buttonMult.getText();
+        String numberDiv = (String) buttonDiv.getText();
+        String numberClear = (String) buttonClear.getText();
+        String numberEquals = (String) buttonEquals.getText();
+        String numberChangeColor = (String) buttonChangeColor.getText();
+        assertEquals("+", numberPlus);
+        assertEquals("-", numberMinus);
+        assertEquals("X", numberMult);
+        assertEquals("%", numberDiv);
+        assertEquals("C", numberClear);
+        assertEquals("=", numberEquals);
+        assertEquals("Change Color", numberChangeColor);
     }
 }
