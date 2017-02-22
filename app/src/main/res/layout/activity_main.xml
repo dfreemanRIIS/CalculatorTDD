@@ -11,7 +11,189 @@
     tools:context="com.example.dfreeman.calculatortdd.View.MainActivity">
 
     <TextView
+        android:id="@+id/firstInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:onClick="onClickZero"
+        android:text="@string/zero" />
+
+    <Button
+        android:id="@+id/one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/zero"
+        android:layout_alignParentStart="true"
+        android:onClick="onClickOne"
+        android:text="@string/one" />
+
+    <Button
+        android:id="@+id/four"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/one"
+        android:layout_alignParentStart="true"
+        android:onClick="onClickFour"
+        android:text="@string/four" />
+
+    <Button
+        android:id="@+id/seven"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/four"
+        android:layout_alignParentStart="true"
+        android:onClick="onClickSeven"
+        android:text="@string/seven" />
+
+    <Button
+        android:id="@+id/two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/four"
+        android:layout_toEndOf="@+id/zero"
+        android:onClick="onClickTwo"
+        android:text="@string/two" />
+
+    <Button
+        android:id="@+id/three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/two"
+        android:layout_toEndOf="@+id/two"
+        android:onClick="onClickThree"
+        android:text="@string/three" />
+
+    <Button
+        android:id="@+id/five"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/two"
+        android:layout_toEndOf="@+id/four"
+        android:onClick="onClickFive"
+        android:text="@string/five" />
+
+    <Button
+        android:id="@+id/six"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/five"
+        android:layout_toEndOf="@+id/two"
+        android:onClick="onClickSix"
+        android:text="@string/six" />
+
+    <Button
+        android:id="@+id/eight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/five"
+        android:layout_toEndOf="@+id/seven"
+        android:onClick="onClickEight"
+        android:text="@string/eight" />
+
+    <Button
+        android:id="@+id/nine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/six"
+        android:layout_toEndOf="@+id/eight"
+        android:onClick="onClickNine"
+        android:text="@string/nine" />
+
+    <TextView
+        android:id="@+id/operator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/firstInput"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="17dp"
+        android:layout_toEndOf="@+id/firstInput"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/secondInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/operator"
+        android:layout_marginStart="17dp"
+        android:layout_toEndOf="@+id/operator"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/zero"
+        android:onClick="onClickClear"
+        android:text="@string/clear" />
+
+    <Button
+        android:id="@+id/equals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/two"
+        android:onClick="onEqualsClick"
+        android:text="@string/equals" />
+
+    <Button
+        android:id="@+id/plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/nine"
+        android:layout_toEndOf="@+id/nine"
+        android:onClick="onPlusClick"
+        android:text="@string/plus" />
+
+    <Button
+        android:id="@+id/minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/three"
+        android:layout_toEndOf="@+id/six"
+        android:onClick="onMinusClick"
+        android:text="@string/minus" />
+
+    <Button
+        android:id="@+id/multiply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/equals"
+        android:layout_toEndOf="@+id/three"
+        android:onClick="onMultClick"
+        android:text="@string/mult" />
+
+    <Button
+        android:id="@+id/divide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/three"
+        android:onClick="onDivideClick"
+        android:text="@string/divide" />
+
+    <TextView
+        android:id="@+id/answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/operator"
+        android:layout_marginTop="30dp"
+        android:layout_toEndOf="@+id/firstInput"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/changeColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/plus"
+        android:onClick="onChangeColorClick"
+        android:text="@string/changeColor" />
+
 </RelativeLayout>
