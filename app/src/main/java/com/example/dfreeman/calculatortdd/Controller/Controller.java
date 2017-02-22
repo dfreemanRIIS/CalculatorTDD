@@ -8,21 +8,21 @@ import com.example.dfreeman.calculatortdd.Model.SubtractionModel;
 public class Controller {
     public int Add(int first, int second) {
         AdditionModel additionModel = new AdditionModel();
-        return 1;
+        return additionModel.add(first, second);
     }
 
     public int Subtract(int first, int second) {
         SubtractionModel subtractionModel = new SubtractionModel();
-        return 1;
+        return subtractionModel.sub(first, second);
     }
 
     public int Multiply(int first, int second) {
         MultiplicationModel multiplicationModel = new MultiplicationModel();
-        return 1;
+        return multiplicationModel.mult(first, second);
     }
 
     public double Divide(double first, double second) {
         DivisionModel divisionModel = new DivisionModel();
-        return 1;
+        return divisionModel.div(first, second);
     }
 }

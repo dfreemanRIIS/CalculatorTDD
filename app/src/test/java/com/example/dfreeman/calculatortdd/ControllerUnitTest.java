@@ -29,11 +29,11 @@ public class ControllerUnitTest {
 
     @Test
     public void controller_multiplication_isCorrect() {
-        assertEquals(controller.Multiply(2, 2), 2 + 2);
+        assertEquals(controller.Multiply(2, 2), 2 * 2);
     }
 
     @Test
     public void controller_division_isCorrect() {
-        assertEquals(controller.Divide(8.0, 2.0), 8.0 + 2.0, DELTA);
+        assertEquals(controller.Divide(8.0, 2.0), 8.0 / 2.0, DELTA);
     }
 }
