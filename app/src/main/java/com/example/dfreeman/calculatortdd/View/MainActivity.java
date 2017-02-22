@@ -8,6 +8,10 @@ import com.example.dfreeman.calculatortdd.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    private String firstFieldText;
+    private String secondFieldText;
+    private String operateorText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,5 +67,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onChangeColorClick(View v) {
+    }
+
+    public String getFirstFieldText() {
+        return "Test";
+    }
+
+    public String getSecondFieldText() {
+        return "Test";
+    }
+
+    public String getOperateorText() {
+        return "Test";
     }
 }

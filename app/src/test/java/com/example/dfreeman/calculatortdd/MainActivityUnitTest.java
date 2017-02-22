@@ -61,9 +61,6 @@ public class MainActivityUnitTest {
 
     @Test
     public void testNumberButtons() {
-        //buttonOne.callOnClick();
-        //This will be for testing clicks later
-
         String numberOne = (String) buttonOne.getText();
         String numberTwo = (String) buttonTwo.getText();
         String numberThree = (String) buttonThree.getText();
@@ -102,5 +99,41 @@ public class MainActivityUnitTest {
         assertEquals("C", numberClear);
         assertEquals("=", numberEquals);
         assertEquals("Change Color", numberChangeColor);
+    }
+
+    @Test
+    public void testClicks() {
+        MainActivity mainActivity = new MainActivity();
+        buttonOne.callOnClick();
+        assertEquals("1", mainActivity.getFirstFieldText());
+        buttonTwo.callOnClick();
+        assertEquals("12", mainActivity.getFirstFieldText());
+        buttonClear.callOnClick();
+        buttonThree.callOnClick();
+        assertEquals("3", mainActivity.getFirstFieldText());
+        buttonFour.callOnClick();
+        assertEquals("34", mainActivity.getFirstFieldText());
+        buttonFive.callOnClick();
+        assertEquals("345", mainActivity.getFirstFieldText());
+        buttonSix.callOnClick();
+        assertEquals("3456", mainActivity.getFirstFieldText());
+        buttonSeven.callOnClick();
+        assertEquals("34567", mainActivity.getFirstFieldText());
+        buttonPlus.callOnClick();
+        assertEquals("+", mainActivity.getOperateorText());
+        buttonMinus.callOnClick();
+        assertEquals("-", mainActivity.getOperateorText());
+        buttonMult.callOnClick();
+        assertEquals("*", mainActivity.getOperateorText());
+        buttonDiv.callOnClick();
+        assertEquals("/", mainActivity.getOperateorText());
+        buttonEight.callOnClick();
+        assertEquals("8", mainActivity.getSecondFieldText());
+        buttonNine.callOnClick();
+        assertEquals("89", mainActivity.getSecondFieldText());
+        buttonZero.callOnClick();
+        assertEquals("890", mainActivity.getSecondFieldText());
+        buttonEquals.callOnClick();
+        buttonChangeColor.callOnClick();
     }
 }
