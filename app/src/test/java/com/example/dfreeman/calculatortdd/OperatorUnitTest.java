@@ -11,6 +11,8 @@ import static org.junit.Assert.*;
 
 public class OperatorUnitTest {
 
+    private static final double DELTA = 1e-15;
+
     @Test
     public void addition_isCorrect() throws Exception {
         AdditionModel additionModel = new AdditionModel();
@@ -32,6 +34,6 @@ public class OperatorUnitTest {
     @Test
     public void division_isCorrect() throws Exception {
         DivisionModel divisionModel = new DivisionModel();
-        assertEquals(divisionModel.div(8,2), 8 / 2);
+        assertEquals(divisionModel.div(8.0, 2.0), 8.0 / 2.0, DELTA);
     }
 }
