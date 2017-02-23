@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private String secondFieldText = "";
     private String operatorText = "";
     private  boolean isSecondHalf = false;
+    private double solution;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,6 +128,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onEqualsClick(View v) {
+        double firstNum = Double.parseDouble(firstFieldText);
+        double secondNum = Double.parseDouble(secondFieldText);
+        if(operatorText.equals("+")) {
+            solution = firstNum + secondNum;
+        }
+        if(operatorText.equals("-")) {
+            solution = firstNum - secondNum;
+        }
+        if(operatorText.equals("*")) {
+            solution = firstNum * secondNum;
+        }
+        if(operatorText.equals("/")) {
+            if(secondFieldText.equals("0")) {
+                final String divZero = "YOU CANT DIVIDE BY ZERO YOU CANT DIVIDE BY ZERO YOU CANT DIVIDE BY ZERO YOU CANT DIVIDE BY ZERO YOU CANT DIVIDE BY ZERO YOU CANT DIVIDE BY ZERO YOU CANT DIVIDE BY ZERO YOU CANT DIVIDE BY ZERO ";
+                solution = 0;
+            } else {
+                solution = firstNum / secondNum;
+            }
+        }
     }
 
     public void onChangeColorClick(View v) {
@@ -142,5 +162,9 @@ public class MainActivity extends AppCompatActivity {
 
     public String getOperatorText() {
         return operatorText;
+    }
+
+    public double getSolution() {
+        return solution;
     }
 }

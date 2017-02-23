@@ -17,6 +17,7 @@ import static org.junit.Assert.assertNotNull;
 @RunWith(RobolectricGradleTestRunner.class)
 @Config(constants = BuildConfig.class, sdk = 21, manifest = "src/main/AndroidManifest.xml")
 public class MainActivityUnitTest {
+    private static final double DELTA = 1e-15;
     private MainActivity mainActivity;
     private Button buttonOne;
     private Button buttonTwo;
@@ -118,14 +119,14 @@ public class MainActivityUnitTest {
         assertEquals("3456", mainActivity.getFirstFieldText());
         buttonSeven.callOnClick();
         assertEquals("34567", mainActivity.getFirstFieldText());
-        buttonPlus.callOnClick();
-        assertEquals("+", mainActivity.getOperatorText());
-        buttonMinus.callOnClick();
-        assertEquals("-", mainActivity.getOperatorText());
-        buttonMult.callOnClick();
-        assertEquals("*", mainActivity.getOperatorText());
         buttonDiv.callOnClick();
         assertEquals("/", mainActivity.getOperatorText());
+        buttonMult.callOnClick();
+        assertEquals("*", mainActivity.getOperatorText());
+        buttonMinus.callOnClick();
+        assertEquals("-", mainActivity.getOperatorText());
+        buttonPlus.callOnClick();
+        assertEquals("+", mainActivity.getOperatorText());
         buttonEight.callOnClick();
         assertEquals("8", mainActivity.getSecondFieldText());
         buttonNine.callOnClick();
@@ -133,8 +134,8 @@ public class MainActivityUnitTest {
         buttonZero.callOnClick();
         assertEquals("890", mainActivity.getSecondFieldText());
         buttonEquals.callOnClick();
-        String resultString = Double.toString(34567 / 890);
-        assertEquals(resultString, mainActivity.getSolution);
+        double result = 34567 + 890;
+        assertEquals(result, mainActivity.getSolution(), DELTA);
         buttonChangeColor.callOnClick();
     }
 }
