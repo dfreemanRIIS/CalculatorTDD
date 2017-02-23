@@ -137,5 +137,9 @@ public class MainActivityUnitTest {
         double result = 34567 + 890;
         assertEquals(result, mainActivity.getSolution(), DELTA);
         buttonChangeColor.callOnClick();
+        buttonChangeColor.callOnClick();
+        buttonChangeColor.callOnClick();
+        buttonChangeColor.callOnClick();
+        assertEquals("yellow", mainActivity.getColor());
     }
 }
