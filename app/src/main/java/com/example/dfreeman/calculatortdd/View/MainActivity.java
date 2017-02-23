@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.dfreeman.calculatortdd.Controller.Controller;
 import com.example.dfreeman.calculatortdd.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -170,22 +171,23 @@ public class MainActivity extends AppCompatActivity {
 
     public void onEqualsClick(View v) {
         if (firstFieldText != "" && secondFieldText != "" && operatorText != "") {
+            Controller controller = new Controller();
             double firstNum = Double.parseDouble(firstFieldText);
             double secondNum = Double.parseDouble(secondFieldText);
             if (operatorText.equals("+")) {
-                solution = firstNum + secondNum;
+                solution = controller.Add((int)firstNum, (int)secondNum);
             }
             if (operatorText.equals("-")) {
-                solution = firstNum - secondNum;
+                solution = controller.Subtract((int)firstNum, (int)secondNum);
             }
             if (operatorText.equals("*")) {
-                solution = firstNum * secondNum;
+                solution = controller.Multiply((int)firstNum, (int)secondNum);
             }
             if (operatorText.equals("/")) {
                 if (secondFieldText.equals("0")) {
                     solution = 0;
                 } else {
-                    solution = firstNum / secondNum;
+                    solution = controller.Divide(firstNum, secondNum);
                 }
             }
             String output = "" + solution;
