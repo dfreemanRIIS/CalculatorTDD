@@ -103,7 +103,6 @@ public class MainActivityUnitTest {
 
     @Test
     public void testClicks() {
-        MainActivity mainActivity = new MainActivity();
         buttonOne.callOnClick();
         assertEquals("1", mainActivity.getFirstFieldText());
         buttonTwo.callOnClick();
