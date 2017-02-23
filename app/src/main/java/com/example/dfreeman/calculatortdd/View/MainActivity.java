@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
     private String operatorText = "";
     private  boolean isSecondHalf = false;
     private double solution;
+    private int backgroundCounter=1;
+    private String color ="white";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,6 +152,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onChangeColorClick(View v) {
+        int temp = backgroundCounter % 6;
+        if(temp == 0) {
+            backgroundCounter++;
+            color = "white";
+        }
+        if(temp == 1) {
+            backgroundCounter++;
+            color = "grey";
+        }
+        if(temp == 2) {
+            backgroundCounter++;
+            color = "blue";
+        }
+        if (temp == 3) {
+            backgroundCounter++;
+            color = "green";
+        }
+        if (temp == 4) {
+            backgroundCounter++;
+            color = "yellow";
+        }
+        if (temp == 5) {
+            backgroundCounter++;
+            color = "red";
+        }
     }
 
     public String getFirstFieldText() {
@@ -166,5 +193,9 @@ public class MainActivity extends AppCompatActivity {
 
     public double getSolution() {
         return solution;
+    }
+
+    public String getColor() {
+        return color;
     }
 }
