@@ -133,6 +133,8 @@ public class MainActivityUnitTest {
         buttonZero.callOnClick();
         assertEquals("890", mainActivity.getSecondFieldText());
         buttonEquals.callOnClick();
+        String resultString = Double.toString(34567 / 890);
+        assertEquals(resultString, mainActivity.getSolution);
         buttonChangeColor.callOnClick();
     }
 }
