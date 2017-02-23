@@ -13,10 +13,10 @@ public class MainActivity extends AppCompatActivity {
     private String firstFieldText = "";
     private String secondFieldText = "";
     private String operatorText = "";
-    private  boolean isSecondHalf = false;
+    private boolean isSecondHalf = false;
     private double solution;
-    private int backgroundCounter=1;
-    private String color ="white";
+    private int backgroundCounter = 1;
+    private String color = "white";
     private TextView firstField;
     private TextView secondField;
     private TextView operatorField;
@@ -27,14 +27,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        firstField = (TextView)findViewById(R.id.firstInput);
-        secondField = (TextView)findViewById(R.id.secondInput);
-        operatorField = (TextView)findViewById(R.id.operator);
-        answer = (TextView)findViewById(R.id.answer);
+        firstField = (TextView) findViewById(R.id.firstInput);
+        secondField = (TextView) findViewById(R.id.secondInput);
+        operatorField = (TextView) findViewById(R.id.operator);
+        answer = (TextView) findViewById(R.id.answer);
     }
 
     public void onClickZero(View v) {
-        if(!isSecondHalf) {
+        if (!isSecondHalf) {
             firstFieldText = firstFieldText + "0";
             firstField.setText(firstFieldText);
         } else {
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickOne(View v) {
-        if(!isSecondHalf) {
+        if (!isSecondHalf) {
             firstFieldText = firstFieldText + "1";
             firstField.setText(firstFieldText);
         } else {
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickTwo(View v) {
-        if(!isSecondHalf) {
+        if (!isSecondHalf) {
             firstFieldText = firstFieldText + "2";
             firstField.setText(firstFieldText);
         } else {
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickThree(View v) {
-        if(!isSecondHalf) {
+        if (!isSecondHalf) {
             firstFieldText = firstFieldText + "3";
             firstField.setText(firstFieldText);
         } else {
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickFour(View v) {
-        if(!isSecondHalf) {
+        if (!isSecondHalf) {
             firstFieldText = firstFieldText + "4";
             firstField.setText(firstFieldText);
         } else {
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickFive(View v) {
-        if(!isSecondHalf) {
+        if (!isSecondHalf) {
             firstFieldText = firstFieldText + "5";
             firstField.setText(firstFieldText);
         } else {
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickSix(View v) {
-        if(!isSecondHalf) {
+        if (!isSecondHalf) {
             firstFieldText = firstFieldText + "6";
             firstField.setText(firstFieldText);
         } else {
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickSeven(View v) {
-        if(!isSecondHalf) {
+        if (!isSecondHalf) {
             firstFieldText = firstFieldText + "7";
             firstField.setText(firstFieldText);
         } else {
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickEight(View v) {
-        if(!isSecondHalf) {
+        if (!isSecondHalf) {
             firstFieldText = firstFieldText + "8";
             firstField.setText(firstFieldText);
         } else {
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickNine(View v) {
-        if(!isSecondHalf) {
+        if (!isSecondHalf) {
             firstFieldText = firstFieldText + "9";
             firstField.setText(firstFieldText);
         } else {
@@ -171,17 +171,17 @@ public class MainActivity extends AppCompatActivity {
     public void onEqualsClick(View v) {
         double firstNum = Double.parseDouble(firstFieldText);
         double secondNum = Double.parseDouble(secondFieldText);
-        if(operatorText.equals("+")) {
+        if (operatorText.equals("+")) {
             solution = firstNum + secondNum;
         }
-        if(operatorText.equals("-")) {
+        if (operatorText.equals("-")) {
             solution = firstNum - secondNum;
         }
-        if(operatorText.equals("*")) {
+        if (operatorText.equals("*")) {
             solution = firstNum * secondNum;
         }
-        if(operatorText.equals("/")) {
-            if(secondFieldText.equals("0")) {
+        if (operatorText.equals("/")) {
+            if (secondFieldText.equals("0")) {
                 solution = 0;
             } else {
                 solution = firstNum / secondNum;
@@ -194,17 +194,17 @@ public class MainActivity extends AppCompatActivity {
     public void onChangeColorClick(View v) {
         int temp = backgroundCounter % 6;
         View mv = findViewById(R.id.activity_main);
-        if(temp == 0) {
+        if (temp == 0) {
             backgroundCounter++;
             color = "white";
             mv.setBackgroundColor(Color.argb(255, 255, 255, 255));
         }
-        if(temp == 1) {
+        if (temp == 1) {
             backgroundCounter++;
             color = "grey";
             mv.setBackgroundColor(Color.argb(255, 200, 200, 200));
         }
-        if(temp == 2) {
+        if (temp == 2) {
             backgroundCounter++;
             color = "blue";
             mv.setBackgroundColor(Color.argb(255, 100, 100, 255));
