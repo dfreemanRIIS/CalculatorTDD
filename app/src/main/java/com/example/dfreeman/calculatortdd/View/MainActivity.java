@@ -169,26 +169,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onEqualsClick(View v) {
-        double firstNum = Double.parseDouble(firstFieldText);
-        double secondNum = Double.parseDouble(secondFieldText);
-        if (operatorText.equals("+")) {
-            solution = firstNum + secondNum;
-        }
-        if (operatorText.equals("-")) {
-            solution = firstNum - secondNum;
-        }
-        if (operatorText.equals("*")) {
-            solution = firstNum * secondNum;
-        }
-        if (operatorText.equals("/")) {
-            if (secondFieldText.equals("0")) {
-                solution = 0;
-            } else {
-                solution = firstNum / secondNum;
+        if (firstFieldText != "" && secondFieldText != "" && operatorText != "") {
+            double firstNum = Double.parseDouble(firstFieldText);
+            double secondNum = Double.parseDouble(secondFieldText);
+            if (operatorText.equals("+")) {
+                solution = firstNum + secondNum;
             }
+            if (operatorText.equals("-")) {
+                solution = firstNum - secondNum;
+            }
+            if (operatorText.equals("*")) {
+                solution = firstNum * secondNum;
+            }
+            if (operatorText.equals("/")) {
+                if (secondFieldText.equals("0")) {
+                    solution = 0;
+                } else {
+                    solution = firstNum / secondNum;
+                }
+            }
+            String output = "" + solution;
+            answer.setText(output);
         }
-        String output = "" + solution;
-        answer.setText(output);
     }
 
     public void onChangeColorClick(View v) {
